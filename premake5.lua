@@ -9,7 +9,7 @@ project "ImGui"
     includedirs
     {
         "./",
-        "../glfw_3.4/include"
+        "../glfw/include"
     }
 
 	files
