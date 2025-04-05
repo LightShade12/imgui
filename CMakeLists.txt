@@ -16,6 +16,7 @@ target_sources(imgui PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/imgui.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_opengl3.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_glfw.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/misc/cpp/imgui_stdlib.cpp"
 )
 
 target_link_libraries(imgui PUBLIC compiler_flags)
@@ -24,5 +25,8 @@ if(CMAKE_SYSTEM_NAME MATCHES "Windows")
     target_include_directories(imgui PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../glfw/include")
 endif()
 
-target_include_directories(imgui PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/backends")
+target_include_directories(imgui PUBLIC
+    "${CMAKE_CURRENT_SOURCE_DIR}"
+    "${CMAKE_CURRENT_SOURCE_DIR}/backends"
+    "${CMAKE_CURRENT_SOURCE_DIR}/misc/cpp/")
 
